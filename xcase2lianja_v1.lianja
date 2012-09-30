@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app>
+<appproperties>
+<apptitle>Lianja Demo App</apptitle>
+<appsidebarcategory>General</appsidebarcategory>
+<appsidebarcaption>xcase2lianja_v1</appsidebarcaption>
+<appsidebaricon>:/images/recital_icon_32x32</appsidebaricon>
+<appwidth>1284</appwidth>
+<appheight>1048</appheight>
+<appresizable>1</appresizable>
+<appmaximize>0</appmaximize>
+<apploginrequired>1</apploginrequired>
+<apppublished>1</apppublished>
+<appauthor>Lianja Inc.</appauthor>
+<appversion>1.0</appversion>
+<appdescription>Lianja demo App</appdescription>
+<apppublisher>rsync</apppublisher>
+<apppublisherpath></apppublisherpath>
+<apppublisherarguments>-avz --exclude=*backups*</apppublisherarguments>
+<apppublisherdirectory>/root/mytest</apppublisherdirectory>
+<apppublisherdatabase></apppublisherdatabase>
+<apppublisherserver></apppublisherserver>
+<apppublisherusername></apppublisherusername>
+<apppublisherpassword></apppublisherpassword>
+<apppublishercopydatabase>false</apppublishercopydatabase>
+<appserverlocation>http://www.lianja.com</appserverlocation>
+<appservertype></appservertype>
+<appserveruser></appserveruser>
+<appserverdatabase>southwind</appserverdatabase>
+<appserverpassword>/root/.local/share/data//lianjadata/</appserverpassword>
+<datadir>${LIANJA_DIR}data\</datadir>
+<appsdir>${LIANJA_DIR}apps\</appsdir>
+<templatesdir>${LIANJA_DIR}templates\</templatesdir>
+<addblankformsection>false</addblankformsection>
+<hideheaderbar>true</hideheaderbar>
+<showbackbutton>false</showbackbutton>
+<showpagesmenu>false</showpagesmenu>
+<hideheadericons>false</hideheadericons>
+<pagecount>1</pagecount>
+<scriptinglanguage>Recital</scriptinglanguage>
+<customlibrary></customlibrary>
+<htmleditor>Desktop</htmleditor>
+<permadmin></permadmin>
+<permcreate></permcreate>
+<permread></permread>
+<permupdate></permupdate>
+<permdelete></permdelete>
+<initaction></initaction>
+<destroyaction></destroyaction>
+<loadaction></loadaction>
+<unloadaction></unloadaction>
+<timeraction>lianjademo_timer()</timeraction>
+<timerinterval>5</timerinterval>
+<desktopui>1</desktopui>
+<webui>1</webui>
+<mobileui>1</mobileui>
+</appproperties>
+<menubutton>
+    <pageid>xCase2Lianja</pageid>
+    <caption>xCase2Lianja</caption>
+</menubutton>
+<page>
+    <id>xCase2Lianja</id>
+    <title>xCase2Lianja</title>
+    <backcolor>#ffffffff</backcolor>
+    <forecolor>#000000ff</forecolor>
+    <pagegradient>false</pagegradient>
+    <pagegradienttype>0</pagegradienttype>
+    <pagefromcolor>#fafafaff</pagefromcolor>
+    <pagetocolor>#c0c0c0ff</pagetocolor>
+    <headerbackcolor>#eeeeeeff</headerbackcolor>
+    <headerforecolor>#ffffffff</headerforecolor>
+    <headerfromcolor>#c8c8c8ff</headerfromcolor>
+    <headertocolor>#000000ff</headertocolor>
+    <marginwidth>5</marginwidth>
+    <hidecustomsearchicon>true</hidecustomsearchicon>
+    <hidefullscreenicon>false</hidefullscreenicon>
+    <hidenotificationicon>false</hidenotificationicon>
+    <hideshareicon>false</hideshareicon>
+    <hidehomeicon>false</hidehomeicon>
+    <showoptionsbutton>false</showoptionsbutton>
+    <leftsidebarimagevisible>false</leftsidebarimagevisible>
+    <hideheadericon>false</hideheadericon>
+    <hidesearchbox>false</hidesearchbox>
+    <timerinterval>0</timerinterval>
+    <stretch>false</stretch>
+    <stretchlastsectionatruntime>false</stretchlastsectionatruntime>
+    <scrollbarvisibleatruntime>true</scrollbarvisibleatruntime>
+    <usescrollbarminheight>0</usescrollbarminheight>
+    <headervisible>true</headervisible>
+    <headerheight>40</headerheight>
+    <headercaption>xCase2Lianja</headercaption>
+    <refreshwhenactivated>false</refreshwhenactivated>
+    <headergradient>true</headergradient>
+    <headergradienttype>5</headergradienttype>
+    <leftsidebarvisible>true</leftsidebarvisible>
+    <rightsidebarvisible>false</rightsidebarvisible>
+    <hideactionbaratruntime>false</hideactionbaratruntime>
+    <syncactionbar>true</syncactionbar>
+    <leftsidebarloginpanelvisible>true</leftsidebarloginpanelvisible>
+    <leftsidebarappsvisible>false</leftsidebarappsvisible>
+    <leftsidebarwidth>240</leftsidebarwidth>
+    <rightsidebarwidth>160</rightsidebarwidth>
+    <leftsidebarappsheadervisible>true</leftsidebarappsheadervisible>
+    <leftsidebaritemsvisible>true</leftsidebaritemsvisible>
+    <leftsidebarmenuvisible>true</leftsidebarmenuvisible>
+    <leftsidebarfavoriteitems>0</leftsidebarfavoriteitems>
+    <leftsidebarrecentlyvieweditems>10</leftsidebarrecentlyvieweditems>
+    <leftsidebarrecentlymodifieditems>10</leftsidebarrecentlymodifieditems>
+    <leftsidebarwatcheditems>0</leftsidebarwatcheditems>
+    <leftsidebarrefreshinterval>0</leftsidebarrefreshinterval>
+    <rightsidebarcustomgadgetvisible>false</rightsidebarcustomgadgetvisible>
+    <rightsidebarcustomgadgetexpanded>false</rightsidebarcustomgadgetexpanded>
+    <rightsidebarcustomgadgetcaption>Untitled</rightsidebarcustomgadgetcaption>
+    <rightsidebarcustomgadgetheight>200</rightsidebarcustomgadgetheight>
+    <rightsidebarcustomgadgetrefreshinterval>0</rightsidebarcustomgadgetrefreshinterval>
+    <rightsidebarcustomgadgetstretch>false</rightsidebarcustomgadgetstretch>
+    <rightsidebarcontentinterval1>0</rightsidebarcontentinterval1>
+    <rightsidebarcontentinterval2>0</rightsidebarcontentinterval2>
+    <rightsidebarcontentinterval3>0</rightsidebarcontentinterval3>
+    <rightsidebarcontentinterval4>0</rightsidebarcontentinterval4>
+    <rightsidebarcontentvisible1>true</rightsidebarcontentvisible1>
+    <rightsidebarcontentvisible2>true</rightsidebarcontentvisible2>
+    <rightsidebarcontentvisible3>true</rightsidebarcontentvisible3>
+    <rightsidebarcontentvisible4>true</rightsidebarcontentvisible4>
+    <rightsidebarcontentexpanded1>true</rightsidebarcontentexpanded1>
+    <rightsidebarcontentexpanded2>true</rightsidebarcontentexpanded2>
+    <rightsidebarcontentexpanded3>true</rightsidebarcontentexpanded3>
+    <rightsidebarcontentexpanded4>true</rightsidebarcontentexpanded4>
+    <rightsidebarcontentheight1>140</rightsidebarcontentheight1>
+    <rightsidebarcontentheight2>140</rightsidebarcontentheight2>
+    <rightsidebarcontentheight3>140</rightsidebarcontentheight3>
+    <rightsidebarcontentheight4>140</rightsidebarcontentheight4>
+    <transparency>0</transparency>
+    <accordionatruntime>false</accordionatruntime>
+    <useaccordiononlowres>false</useaccordiononlowres>
+    <useaccordiononlowresvalue>1024</useaccordiononlowresvalue>
+    <menuicon>:/images/forms</menuicon>
+    <scriptinglanguage>Inherit</scriptinglanguage>
+    <desktopui>true</desktopui>
+    <webui>true</webui>
+    <mobileui>true</mobileui>
+    <section>
+        <id>section1</id>
+        <title>section1</title>
+        <type>canvas</type>
+        <height>200</height>
+        <heightfixed>false</heightfixed>
+        <cascadedeletes>false</cascadedeletes>
+        <applydictionary>false</applydictionary>
+        <backcolor>#f9f9f9ff</backcolor>
+        <forecolor>#000000ff</forecolor>
+        <gridbackcolor>#f9f9f9ff</gridbackcolor>
+        <gridforecolor>#000000ff</gridforecolor>
+        <sectiongradient>false</sectiongradient>
+        <sectiongradienttype>0</sectiongradienttype>
+        <sectionfromcolor>#fafafaff</sectionfromcolor>
+        <sectiontocolor>#c0c0c0ff</sectiontocolor>
+        <hideheaderatruntime>false</hideheaderatruntime>
+        <autoresizegridcolumns>false</autoresizegridcolumns>
+        <readonly>false</readonly>
+        <scrollbar>true</scrollbar>
+        <collapsableatruntime>true</collapsableatruntime>
+        <excludeaccordionatruntime>false</excludeaccordionatruntime>
+        <hideactionbaratruntime>false</hideactionbaratruntime>
+        <showokcancelbuttons>true</showokcancelbuttons>
+        <showprintbutton>true</showprintbutton>
+        <showeditbutton>false</showeditbutton>
+        <resizableatruntime>false</resizableatruntime>
+        <spacervisible>false</spacervisible>
+        <columncount>0</columncount>
+        <stretch>false</stretch>
+        <margin>0</margin>
+        <spacing>0</spacing>
+        <borderradius>0</borderradius>
+        <transparency>0</transparency>
+        <labelwidth>160</labelwidth>
+        <showgrid>true</showgrid>
+        <hidesearchicon>false</hidesearchicon>
+        <hidecustomsearchicon>true</hidecustomsearchicon>
+        <footervisible>false</footervisible>
+        <footerheight>20</footerheight>
+        <minimumheight>0</minimumheight>
+        <footerbackcolor>#efefefff</footerbackcolor>
+        <footerforecolor>#aaaaaaff</footerforecolor>
+        <refreshinterval>0</refreshinterval>
+        <showwhenloggedin>true</showwhenloggedin>
+        <showwhenloggedout>true</showwhenloggedout>
+        <gridreadonly>false</gridreadonly>
+        <splitbar>false</splitbar>
+        <showgridokcancelbuttons>true</showgridokcancelbuttons>
+        <showgridactionbar>true</showgridactionbar>
+        <tabcount>0</tabcount>
+        <tabmargin>10</tabmargin>
+        <tabbackcolor>#e0ecffff</tabbackcolor>
+        <tabforecolor>#000080ff</tabforecolor>
+        <delegatehyperlinks>false</delegatehyperlinks>
+        <scriptinglanguage>Inherit</scriptinglanguage>
+        <customlibrary>lib_page1_section1.prg</customlibrary>
+        <webvieweditable>false</webvieweditable>
+        <loadaction>page1_section1_load</loadaction>
+        <panelwidgetwidth>1014</panelwidgetwidth>
+        <panelwidgetheight>164</panelwidgetheight>
+        <reportgridlines>false</reportgridlines>
+        <calendartitlecolumn>eventtitle</calendartitlecolumn>
+        <calendarstartdatetimecolumn>eventstart</calendarstartdatetimecolumn>
+        <calendarenddatetimecolumn>eventend</calendarenddatetimecolumn>
+        <calendaralldaycolumn>eventallday</calendaralldaycolumn>
+        <calendarendrepeatingcolumn>eventrepeating</calendarendrepeatingcolumn>
+        <desktopui>true</desktopui>
+        <webui>true</webui>
+        <mobileui>true</mobileui>
+        <formitem>
+            <id>field1</id>
+            <showcaption>true</showcaption>
+            <top>4</top>
+            <left>123</left>
+            <width>385</width>
+            <height>34</height>
+            <showdata>true</showdata>
+            <caption>xCase Model Directory</caption>
+            <captionborderwidth>0</captionborderwidth>
+            <captionbordercolor>#c0c0c0ff</captionbordercolor>
+            <captionalignment>LeftCenter</captionalignment>
+            <type>Field</type>
+            <password>false</password>
+            <mandatory>false</mandatory>
+            <dialogbutton>true</dialogbutton>
+            <canselectrows>true</canselectrows>
+            <searchfield>false</searchfield>
+            <readonly>false</readonly>
+            <editable>true</editable>
+            <relateonchange>false</relateonchange>
+            <defaultsearchfieldorder>false</defaultsearchfieldorder>
+            <userselectablesearchfield>false</userselectablesearchfield>
+            <columnnumber>0</columnnumber>
+            <backcolor>#f9f9f9ff</backcolor>
+            <forecolor>#000000ff</forecolor>
+            <databackcolor>#ffffffff</databackcolor>
+            <dataforecolor>#000000ff</dataforecolor>
+            <gadgetmargin>0</gadgetmargin>
+            <gadgethideheader>false</gadgethideheader>
+            <gadgetscriptinglanguage>Recital</gadgetscriptinglanguage>
+            <gadgetfixedwidth>0</gadgetfixedwidth>
+            <refreshinterval>0</refreshinterval>
+            <captiongradient>false</captiongradient>
+            <captiongradienttype>0</captiongradienttype>
+            <captionfromcolor>#fafafaff</captionfromcolor>
+            <captiontocolor>#c0c0c0ff</captiontocolor>
+            <transparency>0</transparency>
+            <controltype>Textbox</controltype>
+            <datatype>C</datatype>
+            <toolbarvisible>true</toolbarvisible>
+            <applydictionary>true</applydictionary>
+            <captionfont>MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0</captionfont>
+            <datafont>MS Shell Dlg 2,8.25,-1,5,75,0,0,0,0,0</datafont>
+            <labeltype>Beside</labeltype>
+            <labelsize>Small</labelsize>
+            <shadingtype>None</shadingtype>
+            <transparencytype>None</transparencytype>
+            <canvasitemx>123</canvasitemx>
+            <canvasitemy>4</canvasitemy>
+            <canvasitemwidth>385</canvasitemwidth>
+            <canvasitemheight>34</canvasitemheight>
+            <controlcaption>Untitled textbox</controlcaption>
+            <controlanchor>0</controlanchor>
+            <controlanchorright>497</controlanchorright>
+            <controlanchorbottom>117</controlanchorbottom>
+            <controlstretch>true</controlstretch>
+            <richtext>false</richtext>
+            <clickaction>page1_section1_field1_click&#40;&#41;</clickaction>
+            <dialogbuttonaction>page1_section1_field1_dialogbutton&#40;&#41;</dialogbuttonaction>
+        </formitem>
+        <formitem>
+            <id>field3</id>
+            <showcaption>true</showcaption>
+            <top>37</top>
+            <left>122</left>
+            <width>389</width>
+            <height>34</height>
+            <showdata>true</showdata>
+            <caption>Database Name</caption>
+            <captionborderwidth>0</captionborderwidth>
+            <captionbordercolor>#c0c0c0ff</captionbordercolor>
+            <captionalignment>LeftCenter</captionalignment>
+            <type>Field</type>
+            <password>false</password>
+            <mandatory>false</mandatory>
+            <dialogbutton>false</dialogbutton>
+            <canselectrows>true</canselectrows>
+            <searchfield>false</searchfield>
+            <readonly>false</readonly>
+            <editable>true</editable>
+            <relateonchange>false</relateonchange>
+            <defaultsearchfieldorder>false</defaultsearchfieldorder>
+            <userselectablesearchfield>false</userselectablesearchfield>
+            <columnnumber>0</columnnumber>
+            <backcolor>#f9f9f9ff</backcolor>
+            <forecolor>#000000ff</forecolor>
+            <databackcolor>#ffffffff</databackcolor>
+            <dataforecolor>#000000ff</dataforecolor>
+            <gadgetmargin>0</gadgetmargin>
+            <gadgethideheader>false</gadgethideheader>
+            <gadgetscriptinglanguage>Recital</gadgetscriptinglanguage>
+            <gadgetfixedwidth>0</gadgetfixedwidth>
+            <refreshinterval>0</refreshinterval>
+            <captiongradient>false</captiongradient>
+            <captiongradienttype>0</captiongradienttype>
+            <captionfromcolor>#fafafaff</captionfromcolor>
+            <captiontocolor>#c0c0c0ff</captiontocolor>
+            <transparency>0</transparency>
+            <controltype>Textbox</controltype>
+            <datatype>C</datatype>
+            <toolbarvisible>true</toolbarvisible>
+            <applydictionary>true</applydictionary>
+            <captionfont>MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0</captionfont>
+            <datafont>MS Shell Dlg 2,8.25,-1,5,75,0,0,0,0,0</datafont>
+            <labeltype>Beside</labeltype>
+            <labelsize>Small</labelsize>
+            <shadingtype>None</shadingtype>
+            <transparencytype>None</transparencytype>
+            <canvasitemx>122</canvasitemx>
+            <canvasitemy>37</canvasitemy>
+            <canvasitemwidth>389</canvasitemwidth>
+            <canvasitemheight>34</canvasitemheight>
+            <controlcaption>Untitled textbox</controlcaption>
+            <controlanchor>0</controlanchor>
+            <controlanchorright>494</controlanchorright>
+            <controlanchorbottom>84</controlanchorbottom>
+            <controlstretch>true</controlstretch>
+            <richtext>false</richtext>
+        </formitem>
+    </section>
+</page>
+</app>
