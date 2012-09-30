@@ -144,6 +144,7 @@
         <id>section1</id>
         <title>section1</title>
         <type>canvas</type>
+        <database>provider</database>
         <height>200</height>
         <heightfixed>false</heightfixed>
         <cascadedeletes>false</cascadedeletes>
@@ -164,6 +165,7 @@
         <excludeaccordionatruntime>false</excludeaccordionatruntime>
         <hideactionbaratruntime>false</hideactionbaratruntime>
         <showokcancelbuttons>true</showokcancelbuttons>
+        <showadddeletebuttons>true</showadddeletebuttons>
         <showprintbutton>true</showprintbutton>
         <showeditbutton>false</showeditbutton>
         <resizableatruntime>false</resizableatruntime>
@@ -199,14 +201,14 @@
         <customlibrary>lib_page1_section1.prg</customlibrary>
         <webvieweditable>false</webvieweditable>
         <loadaction>page1_section1_load</loadaction>
-        <panelwidgetwidth>1014</panelwidgetwidth>
+        <panelwidgetwidth>644</panelwidgetwidth>
         <panelwidgetheight>164</panelwidgetheight>
         <reportgridlines>false</reportgridlines>
         <calendartitlecolumn>eventtitle</calendartitlecolumn>
         <calendarstartdatetimecolumn>eventstart</calendarstartdatetimecolumn>
         <calendarenddatetimecolumn>eventend</calendarenddatetimecolumn>
         <calendaralldaycolumn>eventallday</calendaralldaycolumn>
-        <calendarendrepeatingcolumn>eventrepeating</calendarendrepeatingcolumn>
+        <calendarrepeatingcolumn>eventrepeat</calendarrepeatingcolumn>
         <desktopui>true</desktopui>
         <webui>true</webui>
         <mobileui>true</mobileui>
@@ -264,7 +266,7 @@
             <canvasitemheight>34</canvasitemheight>
             <controlcaption>Untitled textbox</controlcaption>
             <controlanchor>0</controlanchor>
-            <controlanchorright>497</controlanchorright>
+            <controlanchorright>127</controlanchorright>
             <controlanchorbottom>117</controlanchorbottom>
             <controlstretch>true</controlstretch>
             <richtext>false</richtext>
@@ -325,7 +327,7 @@
             <canvasitemheight>34</canvasitemheight>
             <controlcaption>Untitled textbox</controlcaption>
             <controlanchor>0</controlanchor>
-            <controlanchorright>494</controlanchorright>
+            <controlanchorright>124</controlanchorright>
             <controlanchorbottom>84</controlanchorbottom>
             <controlstretch>true</controlstretch>
             <richtext>false</richtext>

@@ -129,6 +129,7 @@
         <set-property name="id" value="section1" />
         <set-property name="title" value="section1" />
         <set-property name="type" value="canvas" />
+        <set-property name="database" value="provider" />
         <set-property name="height" value="200" />
         <set-property name="heightfixed" value="false" />
         <set-property name="cascadedeletes" value="false" />
@@ -149,6 +150,7 @@
         <set-property name="excludeaccordionatruntime" value="false" />
         <set-property name="hideactionbaratruntime" value="false" />
         <set-property name="showokcancelbuttons" value="true" />
+        <set-property name="showadddeletebuttons" value="true" />
         <set-property name="showprintbutton" value="true" />
         <set-property name="showeditbutton" value="false" />
         <set-property name="resizableatruntime" value="false" />
@@ -184,14 +186,14 @@
         <set-property name="customlibrary" value="lib_page1_section1.prg" />
         <set-property name="webvieweditable" value="false" />
         <set-property name="loadaction" value="page1_section1_load" />
-        <set-property name="panelwidgetwidth" value="1014" />
+        <set-property name="panelwidgetwidth" value="644" />
         <set-property name="panelwidgetheight" value="164" />
         <set-property name="reportgridlines" value="false" />
         <set-property name="calendartitlecolumn" value="eventtitle" />
         <set-property name="calendarstartdatetimecolumn" value="eventstart" />
         <set-property name="calendarenddatetimecolumn" value="eventend" />
         <set-property name="calendaralldaycolumn" value="eventallday" />
-        <set-property name="calendarendrepeatingcolumn" value="eventrepeating" />
+        <set-property name="calendarrepeatingcolumn" value="eventrepeat" />
         <set-property name="desktopui" value="true" />
         <set-property name="webui" value="true" />
         <set-property name="mobileui" value="true" />
@@ -249,7 +251,7 @@
             <set-property name="canvasitemheight" value="34" />
             <set-property name="controlcaption" value="Untitled textbox" />
             <set-property name="controlanchor" value="0" />
-            <set-property name="controlanchorright" value="497" />
+            <set-property name="controlanchorright" value="127" />
             <set-property name="controlanchorbottom" value="117" />
             <set-property name="controlstretch" value="true" />
             <set-property name="richtext" value="false" />
@@ -310,7 +312,7 @@
             <set-property name="canvasitemheight" value="34" />
             <set-property name="controlcaption" value="Untitled textbox" />
             <set-property name="controlanchor" value="0" />
-            <set-property name="controlanchorright" value="494" />
+            <set-property name="controlanchorright" value="124" />
             <set-property name="controlanchorbottom" value="84" />
             <set-property name="controlstretch" value="true" />
             <set-property name="richtext" value="false" />
