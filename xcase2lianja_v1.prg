@@ -1,150 +1,147 @@
 */ created 20120821 HJF
 */ Copyright Professional Systems Plus, Inc, All Right Reserved Worldwide
 */ Licensed under the Apache 2 Open Source License
-if !validatexCaseDir()
-	return .F.
-endif
+IF !validatexCaseDir()
+	RETURN .F.
+ENDIF
 
-try
-	do pspMetaTables
-catch to loError
-	if vartype(loError.userval) = "O"
-		loError = loError.Userval
-	endif
-endtry
+TRY
+	DO pspMetaTables
+CATCH TO loError
+	IF VARTYPE(loError.USERVAL) = "O"
+		loError = loError.USERVAL
+	ENDIF
+ENDTRY
 
-if vartype(loError) = "O"
-	=messagebox("Failed: " + loError.message
-	return .F.
-else
-	return .T.
-endif
+IF VARTYPE(loError) = "O"
+	=MESSAGEBOX("Failed: " + loError.MESSAGE
+	RETURN .F.
+ELSE
+	RETURN .T.
+ENDIF
 
-procedure validatexCaseDir
-local lcDir
-if !file("xcase2lianja.json")
-	writejsontemplate()
-	lcDir = getdir(,"Select xCase Model Directory)
-	if empty(lcDir)
-		myMessageBox("Please fill out xCase2Lianja.json information in the App directory and try again.",.t.)
-		return .F.
-	else
-		updatexCaseModelDir(lcDir)
-	endif
-else
-		
-endif
+PROCEDURE validatexCaseDir
+	LOCAL lcDir
+	IF !FILE("xcase2lianja.json")
+		writejsontemplate()
+		lcDir = GETDIR(,"Select xCase Model Directory)
+		IF EMPTY(lcDir)
+			myMessageBox("Please fill out xCase2Lianja.json information in the App directory and try again.",.T.)
+			RETURN .F.
+		ELSE
+			updatexCaseModelDir(lcDir)
+		ENDIF 
+	ENDIF
+	loX2L = X2Lobject()
+ENDPROC
 
-loX2L = X2Lobject()
-endproc
+PROCEDURE writejsontemplate
+	LOCAL loObj
+	loObj = OBJECT()
+	loObj.xCaseModelDirectory = "Fill In Directory Here"
+	lcJson = json_encode(loObj)
+	=STRTOFILE(lcJson,ADDBS(Lianja.appdir) + "xCase2Lianja.json")
+ENDPROC
 
-procedure writejsontemplate
-local loObj
-loObj = Object()
-loObj.xCaseModelDirectory = "Fill In Directory Here"
-lcJson = json_encode(loObj)
-=strtofile(lcJson,addbs(Lianja.appdir) + "xCase2Lianja.json")
-endproc
+PROCEDURE X2Lobject
+	LOCAL lcApp
+	lcApp = Lianja.APPLICATION
+	IF TYPE("Lianja." + lcApp) = "U"
+		Lianja.ADDPROPERTY(lcApp,OBJECT())
+		lcAppObj = EVAL("Lianja." + lcApp)
+		lcAppObj = OBJECT()
+	ELSE
+		lcAppObj = EVAL("Lianja." + lcApp)
+	ENDIF
+	IF TYPE("Lianja." + lcApp + "oX2L") = "U"
+		lcAppObj.oX2L = json_decode("xcase2lianja.json")
+	ENDIF
+ENDPROC
 
-procedure X2Lobject
-local lcApp
-lcApp = Lianja.application
-if type("Lianja." + lcApp) = "U"
-	Lianja.addproperty(lcApp,Object())
-	lcAppObj = eval("Lianja." + lcApp)
-	lcAppObj = Object()
-else
-	lcAppObj = eval("Lianja." + lcApp)
-endif
-if type("Lianja." + lcApp + "oX2L") = "U"
-	lcAppObj.oX2L = json_decode("xcase2lianja.json")
-endif
-endproc
+PROCEDURE pspMetaTables
+	LOCAL lcPspMetaDb
 
-procedure pspMetaTables
-local lcPspMetaDb
+	lcPspMetaDb = "pspMeta_" + Lianja.APPLICATION
+	IF !DBUSED(lcPspMetaDb)
+		IF !myOpenData(lcPspMetaDb)
+			IF !createPspMetaTables(lcPspMetaDb)
+				RETURN .F.
+			ENDIF
+		ENDIF
+	ENDIF
+ENDPROC
 
-lcPspMetaDb = "pspMeta_" + Lianja.Application
-if !dbused(lcPspMetaDb)
-	if !myOpenData(lcPspMetaDB)
-		if !createPspMetaTables(lcPspMetaDB)
-			return .F.
-		endif
-	endif
-endif
-endproc
+PROCEDURE createPspMetaTables
+	LPARAMETERS tcPspMetaDB
 
-procedure createPSPMetaTables		
-lParameters tcPspMetaDB
+	IF !myCreateDatabase(tcPspMetaDB)
+		RETURN .F.
+	ENDIF
 
-if !myCreateDatabase(tcPspMetaDB)
-	return .F.
-endif
+	IF !myOpenData(tcPspMetaDB)
+		RETURN .F.
+	ENDIF
 
-if !myOpenData(tcPspMetaDB)
-	return .F.
-endif
+	SET DATABASE TO (tcPspMetaDB)
+	llOK = createPspMeta4Tables() AND ;
+		createPspMeta4Views() AND ;
+		createPspMeta4Fields() AND ;
+		createPspMeta4VFields() AND ;
+		createPspMeta4Indexes() AND ;
+		createPspMeta4Relations() AND ;
+		createPspMeta4FldTriggers() AND ;
+		createPspMeta4VFldTriggers() AND ;
+		createPspMeta4EntityTriggers() AND ;
+		createPspMeta4ViewTriggers()
 
-set database to (tcPSPMetaDB)
-llOK = createPspMeta4Tables() and ;
-createPspMeta4Views() and ;
-createPspMeta4Fields() and ;
-createPspMeta4VFields() and ;
-createPspMeta4Indexes() and ;
-createPspMeta4Relations() and ;
-createPspMeta4FldTriggers() and ;
-createPspMeta4VFldTriggers() and ;
-createPspMeta4EntityTriggers() and ;
-createPspMeta4ViewTriggers()
+	RETURN llOK
+ENDPROC
 
-return llOK
-endproc
+PROCEDURE openxCaseTable
+	LPARAMETERS tcEntity, tcAlias
+	usein(tcAlias)
+	OPENTABLE(tcEntity,tcAlias)
 
-procedure openxCaseTable
-lParameters tcEntity, tcAlias
-usein(tcAlias)
-opentable(tcEntity,tcAlias)
+PROCEDURE createPspMeta4Tables()
+	openxCaseTable("ddent","myddent")
 
-procedure createPspMeta4Tables()
-openxCaseTable("ddent","myddent")
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4Views()
 
-procedure createPspMeta4Views()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4Fields()
 
-procedure createPspMeta4Fields()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4VFields()
 
-procedure createPspMeta4VFields()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4Indexes()
 
-procedure createPspMeta4Indexes()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4Relations()
 
-procedure createPspMeta4Relations()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4FldTriggers()
 
-procedure createPspMeta4FldTriggers()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4VFldTriggers()
 
-procedure createPspMeta4VFldTriggers()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4EntityTriggers()
 
-procedure createPspMeta4EntityTriggers()
+ENDPROC
 
-endproc
+PROCEDURE createPspMeta4ViewTriggers()
 
-procedure createPspMeta4ViewTriggers()
-
-endproc									
+ENDPROC
 
 
 
