@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <app>
 <appproperties>
-<apptitle>Lianja Demo App</apptitle>
+<apptitle>xCase2Lianja Bootstrap</apptitle>
 <appsidebarcategory>General</appsidebarcategory>
 <appsidebarcaption>xcase2lianja_v1</appsidebarcaption>
 <appsidebaricon>:/images/recital_icon_32x32</appsidebaricon>
@@ -40,6 +40,11 @@
 <scriptinglanguage>Recital</scriptinglanguage>
 <customlibrary></customlibrary>
 <htmleditor>Desktop</htmleditor>
+<apptilebackcolor>#00efefef</apptilebackcolor>
+<apptiledynamiccontents>0</apptiledynamiccontents>
+<apptilesize>1x1</apptilesize>
+<apptileorder>0</apptileorder>
+<apptileurl></apptileurl>
 <permadmin></permadmin>
 <permcreate></permcreate>
 <permread></permread>
@@ -56,12 +61,12 @@
 <mobileui>1</mobileui>
 </appproperties>
 <menubutton>
-    <pageid>xCase2Lianja</pageid>
-    <caption>xCase2Lianja</caption>
+    <pageid>Main</pageid>
+    <caption>Main</caption>
 </menubutton>
 <page>
-    <id>xCase2Lianja</id>
-    <title>xCase2Lianja</title>
+    <id>Main</id>
+    <title>Main</title>
     <backcolor>#ffffffff</backcolor>
     <forecolor>#000000ff</forecolor>
     <pagegradient>false</pagegradient>
@@ -89,7 +94,7 @@
     <usescrollbarminheight>0</usescrollbarminheight>
     <headervisible>true</headervisible>
     <headerheight>40</headerheight>
-    <headercaption>xCase2Lianja</headercaption>
+    <headercaption>xCase2Lianja Bootstrap</headercaption>
     <refreshwhenactivated>false</refreshwhenactivated>
     <headergradient>true</headergradient>
     <headergradienttype>5</headergradienttype>
@@ -141,16 +146,23 @@
     <webui>true</webui>
     <mobileui>true</mobileui>
     <section>
-        <id>section1</id>
-        <title>section1</title>
+        <id>config</id>
+        <title>Config</title>
         <type>canvas</type>
-        <database>provider</database>
-        <height>200</height>
+        <database>xc2lianja_v1</database>
+        <table>PCONFIG</table>
+        <height>228</height>
         <heightfixed>false</heightfixed>
         <cascadedeletes>false</cascadedeletes>
         <applydictionary>false</applydictionary>
         <backcolor>#f9f9f9ff</backcolor>
         <forecolor>#000000ff</forecolor>
+        <headergradient>true</headergradient>
+        <headergradienttype>5</headergradienttype>
+        <headerfromcolor>#fafafaff</headerfromcolor>
+        <headertocolor>#efefefff</headertocolor>
+        <headerbackcolor>#000000ff</headerbackcolor>
+        <headerforecolor>#808080ff</headerforecolor>
         <gridbackcolor>#f9f9f9ff</gridbackcolor>
         <gridforecolor>#000000ff</gridforecolor>
         <sectiongradient>false</sectiongradient>
@@ -160,6 +172,7 @@
         <hideheaderatruntime>false</hideheaderatruntime>
         <autoresizegridcolumns>false</autoresizegridcolumns>
         <readonly>false</readonly>
+        <doubleclicktoedit>false</doubleclicktoedit>
         <scrollbar>true</scrollbar>
         <collapsableatruntime>true</collapsableatruntime>
         <excludeaccordionatruntime>false</excludeaccordionatruntime>
@@ -185,6 +198,7 @@
         <minimumheight>0</minimumheight>
         <footerbackcolor>#efefefff</footerbackcolor>
         <footerforecolor>#aaaaaaff</footerforecolor>
+        <relatedsections>section1</relatedsections>
         <refreshinterval>0</refreshinterval>
         <showwhenloggedin>true</showwhenloggedin>
         <showwhenloggedout>true</showwhenloggedout>
@@ -200,34 +214,36 @@
         <scriptinglanguage>Inherit</scriptinglanguage>
         <customlibrary>lib_page1_section1.prg</customlibrary>
         <webvieweditable>false</webvieweditable>
+        <editonclick>false</editonclick>
+        <editondoubleclick>false</editondoubleclick>
         <loadaction>page1_section1_load</loadaction>
-        <panelwidgetwidth>644</panelwidgetwidth>
-        <panelwidgetheight>164</panelwidgetheight>
         <reportgridlines>false</reportgridlines>
         <calendartitlecolumn>eventtitle</calendartitlecolumn>
         <calendarstartdatetimecolumn>eventstart</calendarstartdatetimecolumn>
         <calendarenddatetimecolumn>eventend</calendarenddatetimecolumn>
         <calendaralldaycolumn>eventallday</calendaralldaycolumn>
         <calendarrepeatingcolumn>eventrepeat</calendarrepeatingcolumn>
+        <calendareventtypecolumn>eventtype</calendareventtypecolumn>
         <desktopui>true</desktopui>
         <webui>true</webui>
         <mobileui>true</mobileui>
+        <gesturesenabled>false</gesturesenabled>
         <formitem>
-            <id>field1</id>
+            <id>cmdRun</id>
             <showcaption>true</showcaption>
-            <top>4</top>
-            <left>123</left>
-            <width>385</width>
-            <height>34</height>
+            <top>111</top>
+            <left>361</left>
+            <width>100</width>
+            <height>75</height>
             <showdata>true</showdata>
-            <caption>xCase Model Directory</caption>
+            <caption>Untitled</caption>
             <captionborderwidth>0</captionborderwidth>
             <captionbordercolor>#c0c0c0ff</captionbordercolor>
             <captionalignment>LeftCenter</captionalignment>
             <type>Field</type>
             <password>false</password>
             <mandatory>false</mandatory>
-            <dialogbutton>true</dialogbutton>
+            <dialogbutton>false</dialogbutton>
             <canselectrows>true</canselectrows>
             <searchfield>false</searchfield>
             <readonly>false</readonly>
@@ -238,7 +254,7 @@
             <columnnumber>0</columnnumber>
             <backcolor>#f9f9f9ff</backcolor>
             <forecolor>#000000ff</forecolor>
-            <databackcolor>#ffffffff</databackcolor>
+            <databackcolor>#f5f5f5ff</databackcolor>
             <dataforecolor>#000000ff</dataforecolor>
             <gadgetmargin>0</gadgetmargin>
             <gadgethideheader>false</gadgethideheader>
@@ -250,7 +266,7 @@
             <captionfromcolor>#fafafaff</captionfromcolor>
             <captiontocolor>#c0c0c0ff</captiontocolor>
             <transparency>0</transparency>
-            <controltype>Textbox</controltype>
+            <controltype>Commandbutton</controltype>
             <datatype>C</datatype>
             <toolbarvisible>true</toolbarvisible>
             <applydictionary>true</applydictionary>
@@ -260,32 +276,32 @@
             <labelsize>Small</labelsize>
             <shadingtype>None</shadingtype>
             <transparencytype>None</transparencytype>
-            <canvasitemx>123</canvasitemx>
-            <canvasitemy>4</canvasitemy>
-            <canvasitemwidth>385</canvasitemwidth>
-            <canvasitemheight>34</canvasitemheight>
-            <controlcaption>Untitled textbox</controlcaption>
+            <canvasitemx>361</canvasitemx>
+            <canvasitemy>111</canvasitemy>
+            <canvasitemwidth>100</canvasitemwidth>
+            <canvasitemheight>75</canvasitemheight>
+            <controlcaption>Create</controlcaption>
             <controlanchor>0</controlanchor>
-            <controlanchorright>127</controlanchorright>
-            <controlanchorbottom>117</controlanchorbottom>
+            <controlanchorright>526</controlanchorright>
+            <controlanchorbottom>3</controlanchorbottom>
             <controlstretch>true</controlstretch>
             <richtext>false</richtext>
-            <clickaction>page1_section1_field1_click&#40;&#41;</clickaction>
-            <dialogbuttonaction>page1_section1_field1_dialogbutton&#40;&#41;</dialogbuttonaction>
+            <clickaction>Main_config_cmdRun_click&#40;&#41;</clickaction>
         </formitem>
         <formitem>
-            <id>field3</id>
+            <id>field7</id>
             <showcaption>true</showcaption>
-            <top>37</top>
-            <left>122</left>
-            <width>389</width>
+            <top>41</top>
+            <left>239</left>
+            <width>330</width>
             <height>34</height>
             <showdata>true</showdata>
-            <caption>Database Name</caption>
+            <caption>Model Name</caption>
             <captionborderwidth>0</captionborderwidth>
             <captionbordercolor>#c0c0c0ff</captionbordercolor>
             <captionalignment>LeftCenter</captionalignment>
             <type>Field</type>
+            <controlsource>PCONFIG.CXCASEMODEL</controlsource>
             <password>false</password>
             <mandatory>false</mandatory>
             <dialogbutton>false</dialogbutton>
@@ -321,14 +337,280 @@
             <labelsize>Small</labelsize>
             <shadingtype>None</shadingtype>
             <transparencytype>None</transparencytype>
-            <canvasitemx>122</canvasitemx>
-            <canvasitemy>37</canvasitemy>
-            <canvasitemwidth>389</canvasitemwidth>
+            <canvasitemx>239</canvasitemx>
+            <canvasitemy>41</canvasitemy>
+            <canvasitemwidth>330</canvasitemwidth>
             <canvasitemheight>34</canvasitemheight>
             <controlcaption>Untitled textbox</controlcaption>
             <controlanchor>0</controlanchor>
-            <controlanchorright>124</controlanchorright>
-            <controlanchorbottom>84</controlanchorbottom>
+            <controlanchorright>418</controlanchorright>
+            <controlanchorbottom>108</controlanchorbottom>
+            <controlstretch>true</controlstretch>
+            <richtext>false</richtext>
+        </formitem>
+        <formitem>
+            <id>txtcxcasemodeldir</id>
+            <showcaption>true</showcaption>
+            <top>5</top>
+            <left>5</left>
+            <width>849</width>
+            <height>34</height>
+            <showdata>true</showdata>
+            <caption>xCase Model Directory</caption>
+            <captionborderwidth>0</captionborderwidth>
+            <captionbordercolor>#c0c0c0ff</captionbordercolor>
+            <captionalignment>LeftCenter</captionalignment>
+            <type>Field</type>
+            <controlsource>PCONFIG.CXCASEMODELDIR</controlsource>
+            <password>false</password>
+            <mandatory>false</mandatory>
+            <dialogbutton>true</dialogbutton>
+            <canselectrows>true</canselectrows>
+            <searchfield>false</searchfield>
+            <readonly>false</readonly>
+            <editable>true</editable>
+            <relateonchange>false</relateonchange>
+            <defaultsearchfieldorder>false</defaultsearchfieldorder>
+            <userselectablesearchfield>false</userselectablesearchfield>
+            <columnnumber>0</columnnumber>
+            <backcolor>#f9f9f9ff</backcolor>
+            <forecolor>#000000ff</forecolor>
+            <databackcolor>#ffffffff</databackcolor>
+            <dataforecolor>#000000ff</dataforecolor>
+            <gadgetmargin>0</gadgetmargin>
+            <gadgethideheader>false</gadgethideheader>
+            <gadgetscriptinglanguage>Recital</gadgetscriptinglanguage>
+            <gadgetfixedwidth>0</gadgetfixedwidth>
+            <refreshinterval>0</refreshinterval>
+            <captiongradient>false</captiongradient>
+            <captiongradienttype>0</captiongradienttype>
+            <captionfromcolor>#fafafaff</captionfromcolor>
+            <captiontocolor>#c0c0c0ff</captiontocolor>
+            <transparency>0</transparency>
+            <controltype>Textbox</controltype>
+            <datatype>C</datatype>
+            <toolbarvisible>true</toolbarvisible>
+            <applydictionary>true</applydictionary>
+            <captionfont>MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0</captionfont>
+            <datafont>MS Shell Dlg 2,8.25,-1,5,75,0,0,0,0,0</datafont>
+            <labeltype>Beside</labeltype>
+            <labelsize>Small</labelsize>
+            <shadingtype>None</shadingtype>
+            <transparencytype>None</transparencytype>
+            <canvasitemx>5</canvasitemx>
+            <canvasitemy>5</canvasitemy>
+            <canvasitemwidth>849</canvasitemwidth>
+            <canvasitemheight>34</canvasitemheight>
+            <controlcaption>Untitled textbox</controlcaption>
+            <controlanchor>0</controlanchor>
+            <controlanchorright>133</controlanchorright>
+            <controlanchorbottom>144</controlanchorbottom>
+            <controlstretch>true</controlstretch>
+            <richtext>false</richtext>
+            <gotfocusaction>Main_config_txtcxcasemodeldir_gotfocus&#40;&#41;</gotfocusaction>
+            <dialogbuttonaction>Main_config_txtcxcasemodeldir_dialogbutton&#40;&#41;</dialogbuttonaction>
+        </formitem>
+    </section>
+    <section>
+        <id>section1</id>
+        <title>section1</title>
+        <type>form</type>
+        <database>xc2lianja_v1</database>
+        <table>PCONFIG</table>
+        <height>200</height>
+        <heightfixed>false</heightfixed>
+        <cascadedeletes>false</cascadedeletes>
+        <applydictionary>false</applydictionary>
+        <backcolor>#f9f9f9ff</backcolor>
+        <forecolor>#000000ff</forecolor>
+        <headergradient>true</headergradient>
+        <headergradienttype>5</headergradienttype>
+        <headerfromcolor>#fafafaff</headerfromcolor>
+        <headertocolor>#efefefff</headertocolor>
+        <headerbackcolor>#000000ff</headerbackcolor>
+        <headerforecolor>#808080ff</headerforecolor>
+        <gridbackcolor>#f9f9f9ff</gridbackcolor>
+        <gridforecolor>#000000ff</gridforecolor>
+        <sectiongradient>false</sectiongradient>
+        <sectiongradienttype>0</sectiongradienttype>
+        <sectionfromcolor>#fafafaff</sectionfromcolor>
+        <sectiontocolor>#c0c0c0ff</sectiontocolor>
+        <hideheaderatruntime>false</hideheaderatruntime>
+        <autoresizegridcolumns>false</autoresizegridcolumns>
+        <readonly>false</readonly>
+        <doubleclicktoedit>false</doubleclicktoedit>
+        <scrollbar>true</scrollbar>
+        <collapsableatruntime>true</collapsableatruntime>
+        <excludeaccordionatruntime>false</excludeaccordionatruntime>
+        <hideactionbaratruntime>false</hideactionbaratruntime>
+        <showokcancelbuttons>true</showokcancelbuttons>
+        <showadddeletebuttons>true</showadddeletebuttons>
+        <showprintbutton>true</showprintbutton>
+        <showeditbutton>true</showeditbutton>
+        <resizableatruntime>false</resizableatruntime>
+        <spacervisible>false</spacervisible>
+        <columncount>1</columncount>
+        <stretch>false</stretch>
+        <margin>0</margin>
+        <spacing>0</spacing>
+        <borderradius>0</borderradius>
+        <transparency>0</transparency>
+        <labelwidth>160</labelwidth>
+        <showgrid>true</showgrid>
+        <hidesearchicon>false</hidesearchicon>
+        <hidecustomsearchicon>true</hidecustomsearchicon>
+        <footervisible>false</footervisible>
+        <footerheight>20</footerheight>
+        <minimumheight>0</minimumheight>
+        <footerbackcolor>#efefefff</footerbackcolor>
+        <footerforecolor>#aaaaaaff</footerforecolor>
+        <parentid>config</parentid>
+        <refreshinterval>0</refreshinterval>
+        <showwhenloggedin>true</showwhenloggedin>
+        <showwhenloggedout>true</showwhenloggedout>
+        <gridreadonly>false</gridreadonly>
+        <splitbar>false</splitbar>
+        <showgridokcancelbuttons>true</showgridokcancelbuttons>
+        <showgridactionbar>true</showgridactionbar>
+        <tabcount>0</tabcount>
+        <tabmargin>10</tabmargin>
+        <tabbackcolor>#e0ecffff</tabbackcolor>
+        <tabforecolor>#000080ff</tabforecolor>
+        <delegatehyperlinks>false</delegatehyperlinks>
+        <scriptinglanguage>Inherit</scriptinglanguage>
+        <webvieweditable>false</webvieweditable>
+        <editonclick>false</editonclick>
+        <editondoubleclick>false</editondoubleclick>
+        <reportgridlines>false</reportgridlines>
+        <calendartitlecolumn>eventtitle</calendartitlecolumn>
+        <calendarstartdatetimecolumn>eventstart</calendarstartdatetimecolumn>
+        <calendarenddatetimecolumn>eventend</calendarenddatetimecolumn>
+        <calendaralldaycolumn>eventallday</calendaralldaycolumn>
+        <calendarrepeatingcolumn>eventrepeat</calendarrepeatingcolumn>
+        <calendareventtypecolumn>eventtype</calendareventtypecolumn>
+        <desktopui>true</desktopui>
+        <webui>true</webui>
+        <mobileui>true</mobileui>
+        <gesturesenabled>false</gesturesenabled>
+        <formitem>
+            <id>field5</id>
+            <showcaption>true</showcaption>
+            <top>0</top>
+            <left>0</left>
+            <width>0</width>
+            <height>0</height>
+            <showdata>true</showdata>
+            <caption>xCase Model Directory </caption>
+            <captionborderwidth>0</captionborderwidth>
+            <captionbordercolor>#c0c0c0ff</captionbordercolor>
+            <captionalignment>LeftCenter</captionalignment>
+            <type>Field</type>
+            <controlsource>PCONFIG.CXCASEMODELDIR</controlsource>
+            <password>false</password>
+            <mandatory>false</mandatory>
+            <dialogbutton>true</dialogbutton>
+            <canselectrows>true</canselectrows>
+            <searchfield>false</searchfield>
+            <readonly>false</readonly>
+            <editable>true</editable>
+            <relateonchange>false</relateonchange>
+            <defaultsearchfieldorder>false</defaultsearchfieldorder>
+            <userselectablesearchfield>false</userselectablesearchfield>
+            <columnnumber>3</columnnumber>
+            <table>PCONFIG</table>
+            <column>CXCASEMODELDIR</column>
+            <backcolor>#f9f9f9ff</backcolor>
+            <forecolor>#000000ff</forecolor>
+            <databackcolor>#f5f5f5ff</databackcolor>
+            <dataforecolor>#000000ff</dataforecolor>
+            <gadgetmargin>0</gadgetmargin>
+            <gadgethideheader>false</gadgethideheader>
+            <gadgetscriptinglanguage>Recital</gadgetscriptinglanguage>
+            <gadgetfixedwidth>0</gadgetfixedwidth>
+            <refreshinterval>0</refreshinterval>
+            <captiongradient>false</captiongradient>
+            <captiongradienttype>0</captiongradienttype>
+            <captionfromcolor>#fafafaff</captionfromcolor>
+            <captiontocolor>#c0c0c0ff</captiontocolor>
+            <transparency>0</transparency>
+            <controltype>Auto</controltype>
+            <datatype>C</datatype>
+            <toolbarvisible>true</toolbarvisible>
+            <applydictionary>true</applydictionary>
+            <captionfont>MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0</captionfont>
+            <datafont>MS Shell Dlg 2,8.25,-1,5,75,0,0,0,0,0</datafont>
+            <labeltype>Beside</labeltype>
+            <labelsize>Small</labelsize>
+            <shadingtype>None</shadingtype>
+            <transparencytype>None</transparencytype>
+            <canvasitemx>0</canvasitemx>
+            <canvasitemy>0</canvasitemy>
+            <canvasitemwidth>0</canvasitemwidth>
+            <canvasitemheight>0</canvasitemheight>
+            <controlanchor>0</controlanchor>
+            <controlanchorright>-1</controlanchorright>
+            <controlanchorbottom>-1</controlanchorbottom>
+            <controlstretch>true</controlstretch>
+            <richtext>false</richtext>
+        </formitem>
+        <formitem>
+            <id>txtcModelName</id>
+            <showcaption>true</showcaption>
+            <top>0</top>
+            <left>0</left>
+            <width>0</width>
+            <height>0</height>
+            <showdata>true</showdata>
+            <caption>Model Name </caption>
+            <captionborderwidth>0</captionborderwidth>
+            <captionbordercolor>#c0c0c0ff</captionbordercolor>
+            <captionalignment>LeftCenter</captionalignment>
+            <type>Field</type>
+            <controlsource>PCONFIG.CXCASEMODEL</controlsource>
+            <password>false</password>
+            <mandatory>false</mandatory>
+            <dialogbutton>false</dialogbutton>
+            <canselectrows>true</canselectrows>
+            <searchfield>false</searchfield>
+            <readonly>false</readonly>
+            <editable>true</editable>
+            <relateonchange>false</relateonchange>
+            <defaultsearchfieldorder>false</defaultsearchfieldorder>
+            <userselectablesearchfield>false</userselectablesearchfield>
+            <columnnumber>2</columnnumber>
+            <table>PCONFIG</table>
+            <column>CXCASEMODEL</column>
+            <backcolor>#f9f9f9ff</backcolor>
+            <forecolor>#000000ff</forecolor>
+            <databackcolor>#f5f5f5ff</databackcolor>
+            <dataforecolor>#000000ff</dataforecolor>
+            <gadgetmargin>0</gadgetmargin>
+            <gadgethideheader>false</gadgethideheader>
+            <gadgetscriptinglanguage>Recital</gadgetscriptinglanguage>
+            <gadgetfixedwidth>0</gadgetfixedwidth>
+            <refreshinterval>0</refreshinterval>
+            <captiongradient>false</captiongradient>
+            <captiongradienttype>0</captiongradienttype>
+            <captionfromcolor>#fafafaff</captionfromcolor>
+            <captiontocolor>#c0c0c0ff</captiontocolor>
+            <transparency>0</transparency>
+            <controltype>Auto</controltype>
+            <datatype>C</datatype>
+            <toolbarvisible>true</toolbarvisible>
+            <applydictionary>true</applydictionary>
+            <captionfont>MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0</captionfont>
+            <datafont>MS Shell Dlg 2,8.25,-1,5,75,0,0,0,0,0</datafont>
+            <labeltype>Beside</labeltype>
+            <labelsize>Small</labelsize>
+            <shadingtype>None</shadingtype>
+            <transparencytype>None</transparencytype>
+            <canvasitemx>0</canvasitemx>
+            <canvasitemy>0</canvasitemy>
+            <canvasitemwidth>0</canvasitemwidth>
+            <canvasitemheight>0</canvasitemheight>
+            <controlanchor>0</controlanchor>
+            <controlanchorright>-1</controlanchorright>
+            <controlanchorbottom>-1</controlanchorbottom>
             <controlstretch>true</controlstretch>
             <richtext>false</richtext>
         </formitem>

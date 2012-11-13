@@ -1,0 +1,4 @@
+=MESSAGEBOX("Failed: " + loError.MESSAGE
+Error in line 21: Function name is missing ).
+lcDir = GETDIR(,"Select xCase Model Directory)
+Error in line 31: Function argument value, type, or count is invalid.

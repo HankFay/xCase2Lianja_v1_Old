@@ -1,12 +1,17 @@
 */ created 20120821 HJF
-*/ Copyright Professional Systems Plus, Inc, All Right Reserved Worldwide
+*/ Copyright Professional Systems Plus, Inc, All Rights Reserved Worldwide
 */ Licensed under the Apache 2 Open Source License
 IF !validatexCaseDir()
+	lianja.showmessage("Must Have Valid xCase Model Dir To Process")
 	RETURN .F.
 ENDIF
 
 TRY
-	DO pspMetaTables
+	DO pspMetaTables  && create, and sync, the pspMetaTables
+	DO changes_analyze WITH Lianja.oConfig, "myChanges" && cursor of entities, change types
+	DO lianja_genscript WITH Lianja.oConfig, "myChanges"
+	DO genscript_execute WITH Lianja.oConfig
+	
 CATCH TO loError
 	IF VARTYPE(loError.USERVAL) = "O"
 		loError = loError.USERVAL
@@ -33,6 +38,7 @@ PROCEDURE validatexCaseDir
 		ENDIF 
 	ENDIF
 	loX2L = X2Lobject()
+	Lianja.addproperty("oConfig",loX2L)
 ENDPROC
 
 PROCEDURE writejsontemplate

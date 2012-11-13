@@ -26,8 +26,10 @@ The name of the database is not used in this
 	ENDTEXT
 #ENDIF
 
-LPARAMETERS tcOutputFile, tcTableList, tcFieldList, tlSkipProcedures, tcEntTable, tcFldTable, ;
-	tcIDXTable, tcNewTableSuffix, tlSystemTables, tlSysIntTables
+LPARAMETERS toConfig 
+
+*!*	tcOutputFile, tcTableList, tcFieldList, tlSkipProcedures, tcEntTable, tcFldTable, ;
+*!*		tcIDXTable, tcNewTableSuffix, tlSystemTables, tlSysIntTables
 
 LOCAL lcFieldTypeMatch, lcFieldSpec, lcPrefix, lcOutputFile, lnField, laFieldTypeMatch[1,1], lcIndexExpr
 LOCAL lcFields, lcPrimaryIndex, lcIndexExpr, llDescending, llCandidate, llPrimary, lcSQLTableName, lnNumTypes
