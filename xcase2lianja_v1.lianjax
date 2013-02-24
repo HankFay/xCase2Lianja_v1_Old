@@ -14,9 +14,6 @@
 <set-property name="appserveruser" value="" />
 <set-property name="appserverdatabase" value="southwind" />
 <set-property name="appserverpassword" value="/root/.local/share/data//lianjadata/" />
-<set-property name="datadir" value="${LIANJA_DIR}data\" />
-<set-property name="appsdir" value="${LIANJA_DIR}apps\" />
-<set-property name="templatesdir" value="${LIANJA_DIR}templates\" />
 <set-property name="addblankformsection" value="false" />
 <set-property name="hideheaderbar" value="true" />
 <set-property name="customlibrary" value="" />
@@ -41,6 +38,7 @@
 <set-property name="desktopui" value="true" />
 <set-property name="webui" value="true" />
 <set-property name="mobileui" value="true" />
+<set-property name="theme" value="" />
 <set-property name="apptiledynamiccontents" value="false" />
 <set-property name="apptilesize" value="1x1" />
 <set-property name="apptileorder" value="0" />
@@ -69,6 +67,12 @@
     <set-property name="hideshareicon" value="false" />
     <set-property name="hidehomeicon" value="false" />
     <set-property name="showoptionsbutton" value="false" />
+    <set-property name="leftsidebarbackcolor" value="#f9f9f9ff" />
+    <set-property name="leftsidebarforecolor" value="#000000ff" />
+    <set-property name="leftsidebarbordercolor" value="#e0ecffff" />
+    <set-property name="rightsidebarbackcolor" value="#f9f9f9ff" />
+    <set-property name="rightsidebarforecolor" value="#000000ff" />
+    <set-property name="rightsidebarbordercolor" value="#e0ecffff" />
     <set-property name="leftsidebarimagevisible" value="false" />
     <set-property name="hideheadericon" value="false" />
     <set-property name="hidesearchbox" value="false" />
@@ -127,6 +131,15 @@
     <set-property name="useaccordiononlowresvalue" value="1024" />
     <set-property name="menuicon" value=":/images/forms" />
     <set-property name="scriptinglanguage" value="Inherit" />
+    <set-property name="footervisible" value="true" />
+    <set-property name="footerheight" value="40" />
+    <set-property name="footercustomgadgetrefreshinterval" value="0" />
+    <set-property name="footergradient" value="false" />
+    <set-property name="footergradienttype" value="1" />
+    <set-property name="footerbackcolor" value="#f9f9f9ff" />
+    <set-property name="footerforecolor" value="#000000ff" />
+    <set-property name="footerfromcolor" value="#2b2b2bff" />
+    <set-property name="footertocolor" value="#212121ff" />
     <set-property name="desktopui" value="true" />
     <set-property name="webui" value="true" />
     <set-property name="mobileui" value="true" />
@@ -140,9 +153,10 @@
         <set-property name="heightfixed" value="false" />
         <set-property name="cascadedeletes" value="false" />
         <set-property name="applydictionary" value="false" />
+        <set-property name="timelinesenabled" value="false" />
         <set-property name="backcolor" value="#f9f9f9ff" />
         <set-property name="forecolor" value="#000000ff" />
-        <set-property name="headergradient" value="true" />
+        <set-property name="headergradient" value="false" />
         <set-property name="headergradienttype" value="5" />
         <set-property name="headerfromcolor" value="#fafafaff" />
         <set-property name="headertocolor" value="#efefefff" />
@@ -202,6 +216,8 @@
         <set-property name="editonclick" value="false" />
         <set-property name="editondoubleclick" value="false" />
         <set-property name="loadaction" value="page1_section1_load" />
+        <set-property name="beforecreateaction" value="Main_config_beforecreate" />
+        <set-property name="datachangedaction" value="Main_config_datachanged" />
         <set-property name="reportgridlines" value="false" />
         <set-property name="calendartitlecolumn" value="eventtitle" />
         <set-property name="calendarstartdatetimecolumn" value="eventstart" />
@@ -230,10 +246,13 @@
             <set-property name="mandatory" value="false" />
             <set-property name="dialogbutton" value="false" />
             <set-property name="canselectrows" value="true" />
+            <set-property name="autosuggestcolumn" value="0" />
+            <set-property name="autosuggestcolumnselect" value="0" />
             <set-property name="searchfield" value="false" />
             <set-property name="readonly" value="false" />
             <set-property name="editable" value="true" />
             <set-property name="relateonchange" value="false" />
+            <set-property name="refreshcalculatedonchange" value="false" />
             <set-property name="defaultsearchfieldorder" value="false" />
             <set-property name="userselectablesearchfield" value="false" />
             <set-property name="columnnumber" value="0" />
@@ -267,7 +286,7 @@
             <set-property name="canvasitemheight" value="75" />
             <set-property name="controlcaption" value="Create" />
             <set-property name="controlanchor" value="0" />
-            <set-property name="controlanchorright" value="526" />
+            <set-property name="controlanchorright" value="524" />
             <set-property name="controlanchorbottom" value="3" />
             <set-property name="controlstretch" value="true" />
             <set-property name="richtext" value="false" />
@@ -291,10 +310,13 @@
             <set-property name="mandatory" value="false" />
             <set-property name="dialogbutton" value="false" />
             <set-property name="canselectrows" value="true" />
+            <set-property name="autosuggestcolumn" value="0" />
+            <set-property name="autosuggestcolumnselect" value="0" />
             <set-property name="searchfield" value="false" />
             <set-property name="readonly" value="false" />
             <set-property name="editable" value="true" />
             <set-property name="relateonchange" value="false" />
+            <set-property name="refreshcalculatedonchange" value="false" />
             <set-property name="defaultsearchfieldorder" value="false" />
             <set-property name="userselectablesearchfield" value="false" />
             <set-property name="columnnumber" value="0" />
@@ -328,7 +350,7 @@
             <set-property name="canvasitemheight" value="34" />
             <set-property name="controlcaption" value="Untitled textbox" />
             <set-property name="controlanchor" value="0" />
-            <set-property name="controlanchorright" value="418" />
+            <set-property name="controlanchorright" value="416" />
             <set-property name="controlanchorbottom" value="108" />
             <set-property name="controlstretch" value="true" />
             <set-property name="richtext" value="false" />
@@ -351,10 +373,13 @@
             <set-property name="mandatory" value="false" />
             <set-property name="dialogbutton" value="true" />
             <set-property name="canselectrows" value="true" />
+            <set-property name="autosuggestcolumn" value="0" />
+            <set-property name="autosuggestcolumnselect" value="0" />
             <set-property name="searchfield" value="false" />
             <set-property name="readonly" value="false" />
             <set-property name="editable" value="true" />
             <set-property name="relateonchange" value="false" />
+            <set-property name="refreshcalculatedonchange" value="false" />
             <set-property name="defaultsearchfieldorder" value="false" />
             <set-property name="userselectablesearchfield" value="false" />
             <set-property name="columnnumber" value="0" />
@@ -388,7 +413,7 @@
             <set-property name="canvasitemheight" value="34" />
             <set-property name="controlcaption" value="Untitled textbox" />
             <set-property name="controlanchor" value="0" />
-            <set-property name="controlanchorright" value="133" />
+            <set-property name="controlanchorright" value="131" />
             <set-property name="controlanchorbottom" value="144" />
             <set-property name="controlstretch" value="true" />
             <set-property name="richtext" value="false" />
@@ -406,9 +431,10 @@
         <set-property name="heightfixed" value="false" />
         <set-property name="cascadedeletes" value="false" />
         <set-property name="applydictionary" value="false" />
+        <set-property name="timelinesenabled" value="false" />
         <set-property name="backcolor" value="#f9f9f9ff" />
         <set-property name="forecolor" value="#000000ff" />
-        <set-property name="headergradient" value="true" />
+        <set-property name="headergradient" value="false" />
         <set-property name="headergradienttype" value="5" />
         <set-property name="headerfromcolor" value="#fafafaff" />
         <set-property name="headertocolor" value="#efefefff" />
@@ -495,10 +521,13 @@
             <set-property name="mandatory" value="false" />
             <set-property name="dialogbutton" value="true" />
             <set-property name="canselectrows" value="true" />
+            <set-property name="autosuggestcolumn" value="0" />
+            <set-property name="autosuggestcolumnselect" value="0" />
             <set-property name="searchfield" value="false" />
             <set-property name="readonly" value="false" />
             <set-property name="editable" value="true" />
             <set-property name="relateonchange" value="false" />
+            <set-property name="refreshcalculatedonchange" value="false" />
             <set-property name="defaultsearchfieldorder" value="false" />
             <set-property name="userselectablesearchfield" value="false" />
             <set-property name="columnnumber" value="3" />
@@ -556,10 +585,13 @@
             <set-property name="mandatory" value="false" />
             <set-property name="dialogbutton" value="false" />
             <set-property name="canselectrows" value="true" />
+            <set-property name="autosuggestcolumn" value="0" />
+            <set-property name="autosuggestcolumnselect" value="0" />
             <set-property name="searchfield" value="false" />
             <set-property name="readonly" value="false" />
             <set-property name="editable" value="true" />
             <set-property name="relateonchange" value="false" />
+            <set-property name="refreshcalculatedonchange" value="false" />
             <set-property name="defaultsearchfieldorder" value="false" />
             <set-property name="userselectablesearchfield" value="false" />
             <set-property name="columnnumber" value="2" />

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <app>
 <appproperties>
+<xamlversion>0.0.11</xamlversion>
 <apptitle>xCase2Lianja Bootstrap</apptitle>
 <appsidebarcategory>General</appsidebarcategory>
 <appsidebarcaption>xcase2lianja_v1</appsidebarcaption>
@@ -11,13 +12,14 @@
 <appmaximize>0</appmaximize>
 <apploginrequired>1</apploginrequired>
 <apppublished>1</apppublished>
+<timelinesenabled>0</timelinesenabled>
 <appauthor>Lianja Inc.</appauthor>
 <appversion>1.0</appversion>
 <appdescription>Lianja demo App</appdescription>
-<apppublisher>rsync</apppublisher>
+<apppublisher>copy</apppublisher>
 <apppublisherpath></apppublisherpath>
-<apppublisherarguments>-avz --exclude=*backups*</apppublisherarguments>
-<apppublisherdirectory>/root/mytest</apppublisherdirectory>
+<apppublisherarguments></apppublisherarguments>
+<apppublisherdirectory>C:\Lianja\cloudserver\tenants\public\</apppublisherdirectory>
 <apppublisherdatabase></apppublisherdatabase>
 <apppublisherserver></apppublisherserver>
 <apppublisherusername></apppublisherusername>
@@ -28,9 +30,6 @@
 <appserveruser></appserveruser>
 <appserverdatabase>southwind</appserverdatabase>
 <appserverpassword>/root/.local/share/data//lianjadata/</appserverpassword>
-<datadir>${LIANJA_DIR}data\</datadir>
-<appsdir>${LIANJA_DIR}apps\</appsdir>
-<templatesdir>${LIANJA_DIR}templates\</templatesdir>
 <addblankformsection>false</addblankformsection>
 <hideheaderbar>true</hideheaderbar>
 <showbackbutton>false</showbackbutton>
@@ -59,6 +58,7 @@
 <desktopui>1</desktopui>
 <webui>1</webui>
 <mobileui>1</mobileui>
+<theme></theme>
 </appproperties>
 <menubutton>
     <pageid>Main</pageid>
@@ -84,6 +84,12 @@
     <hideshareicon>false</hideshareicon>
     <hidehomeicon>false</hidehomeicon>
     <showoptionsbutton>false</showoptionsbutton>
+    <leftsidebarbackcolor>#f9f9f9ff</leftsidebarbackcolor>
+    <leftsidebarforecolor>#000000ff</leftsidebarforecolor>
+    <leftsidebarbordercolor>#e0ecffff</leftsidebarbordercolor>
+    <rightsidebarbackcolor>#f9f9f9ff</rightsidebarbackcolor>
+    <rightsidebarforecolor>#000000ff</rightsidebarforecolor>
+    <rightsidebarbordercolor>#e0ecffff</rightsidebarbordercolor>
     <leftsidebarimagevisible>false</leftsidebarimagevisible>
     <hideheadericon>false</hideheadericon>
     <hidesearchbox>false</hidesearchbox>
@@ -142,6 +148,15 @@
     <useaccordiononlowresvalue>1024</useaccordiononlowresvalue>
     <menuicon>:/images/forms</menuicon>
     <scriptinglanguage>Inherit</scriptinglanguage>
+    <footervisible>true</footervisible>
+    <footerheight>40</footerheight>
+    <footercustomgadgetrefreshinterval>0</footercustomgadgetrefreshinterval>
+    <footergradient>false</footergradient>
+    <footergradienttype>1</footergradienttype>
+    <footerbackcolor>#f9f9f9ff</footerbackcolor>
+    <footerforecolor>#000000ff</footerforecolor>
+    <footerfromcolor>#2b2b2bff</footerfromcolor>
+    <footertocolor>#212121ff</footertocolor>
     <desktopui>true</desktopui>
     <webui>true</webui>
     <mobileui>true</mobileui>
@@ -155,9 +170,10 @@
         <heightfixed>false</heightfixed>
         <cascadedeletes>false</cascadedeletes>
         <applydictionary>false</applydictionary>
+        <timelinesenabled>false</timelinesenabled>
         <backcolor>#f9f9f9ff</backcolor>
         <forecolor>#000000ff</forecolor>
-        <headergradient>true</headergradient>
+        <headergradient>false</headergradient>
         <headergradienttype>5</headergradienttype>
         <headerfromcolor>#fafafaff</headerfromcolor>
         <headertocolor>#efefefff</headertocolor>
@@ -217,6 +233,8 @@
         <editonclick>false</editonclick>
         <editondoubleclick>false</editondoubleclick>
         <loadaction>page1_section1_load</loadaction>
+        <beforecreateaction>Main_config_beforecreate</beforecreateaction>
+        <datachangedaction>Main_config_datachanged</datachangedaction>
         <reportgridlines>false</reportgridlines>
         <calendartitlecolumn>eventtitle</calendartitlecolumn>
         <calendarstartdatetimecolumn>eventstart</calendarstartdatetimecolumn>
@@ -245,10 +263,13 @@
             <mandatory>false</mandatory>
             <dialogbutton>false</dialogbutton>
             <canselectrows>true</canselectrows>
+            <autosuggestcolumn>0</autosuggestcolumn>
+            <autosuggestcolumnselect>0</autosuggestcolumnselect>
             <searchfield>false</searchfield>
             <readonly>false</readonly>
             <editable>true</editable>
             <relateonchange>false</relateonchange>
+            <refreshcalculatedonchange>false</refreshcalculatedonchange>
             <defaultsearchfieldorder>false</defaultsearchfieldorder>
             <userselectablesearchfield>false</userselectablesearchfield>
             <columnnumber>0</columnnumber>
@@ -282,7 +303,7 @@
             <canvasitemheight>75</canvasitemheight>
             <controlcaption>Create</controlcaption>
             <controlanchor>0</controlanchor>
-            <controlanchorright>526</controlanchorright>
+            <controlanchorright>524</controlanchorright>
             <controlanchorbottom>3</controlanchorbottom>
             <controlstretch>true</controlstretch>
             <richtext>false</richtext>
@@ -306,10 +327,13 @@
             <mandatory>false</mandatory>
             <dialogbutton>false</dialogbutton>
             <canselectrows>true</canselectrows>
+            <autosuggestcolumn>0</autosuggestcolumn>
+            <autosuggestcolumnselect>0</autosuggestcolumnselect>
             <searchfield>false</searchfield>
             <readonly>false</readonly>
             <editable>true</editable>
             <relateonchange>false</relateonchange>
+            <refreshcalculatedonchange>false</refreshcalculatedonchange>
             <defaultsearchfieldorder>false</defaultsearchfieldorder>
             <userselectablesearchfield>false</userselectablesearchfield>
             <columnnumber>0</columnnumber>
@@ -343,7 +367,7 @@
             <canvasitemheight>34</canvasitemheight>
             <controlcaption>Untitled textbox</controlcaption>
             <controlanchor>0</controlanchor>
-            <controlanchorright>418</controlanchorright>
+            <controlanchorright>416</controlanchorright>
             <controlanchorbottom>108</controlanchorbottom>
             <controlstretch>true</controlstretch>
             <richtext>false</richtext>
@@ -366,10 +390,13 @@
             <mandatory>false</mandatory>
             <dialogbutton>true</dialogbutton>
             <canselectrows>true</canselectrows>
+            <autosuggestcolumn>0</autosuggestcolumn>
+            <autosuggestcolumnselect>0</autosuggestcolumnselect>
             <searchfield>false</searchfield>
             <readonly>false</readonly>
             <editable>true</editable>
             <relateonchange>false</relateonchange>
+            <refreshcalculatedonchange>false</refreshcalculatedonchange>
             <defaultsearchfieldorder>false</defaultsearchfieldorder>
             <userselectablesearchfield>false</userselectablesearchfield>
             <columnnumber>0</columnnumber>
@@ -403,7 +430,7 @@
             <canvasitemheight>34</canvasitemheight>
             <controlcaption>Untitled textbox</controlcaption>
             <controlanchor>0</controlanchor>
-            <controlanchorright>133</controlanchorright>
+            <controlanchorright>131</controlanchorright>
             <controlanchorbottom>144</controlanchorbottom>
             <controlstretch>true</controlstretch>
             <richtext>false</richtext>
@@ -421,9 +448,10 @@
         <heightfixed>false</heightfixed>
         <cascadedeletes>false</cascadedeletes>
         <applydictionary>false</applydictionary>
+        <timelinesenabled>false</timelinesenabled>
         <backcolor>#f9f9f9ff</backcolor>
         <forecolor>#000000ff</forecolor>
-        <headergradient>true</headergradient>
+        <headergradient>false</headergradient>
         <headergradienttype>5</headergradienttype>
         <headerfromcolor>#fafafaff</headerfromcolor>
         <headertocolor>#efefefff</headertocolor>
@@ -510,10 +538,13 @@
             <mandatory>false</mandatory>
             <dialogbutton>true</dialogbutton>
             <canselectrows>true</canselectrows>
+            <autosuggestcolumn>0</autosuggestcolumn>
+            <autosuggestcolumnselect>0</autosuggestcolumnselect>
             <searchfield>false</searchfield>
             <readonly>false</readonly>
             <editable>true</editable>
             <relateonchange>false</relateonchange>
+            <refreshcalculatedonchange>false</refreshcalculatedonchange>
             <defaultsearchfieldorder>false</defaultsearchfieldorder>
             <userselectablesearchfield>false</userselectablesearchfield>
             <columnnumber>3</columnnumber>
@@ -571,10 +602,13 @@
             <mandatory>false</mandatory>
             <dialogbutton>false</dialogbutton>
             <canselectrows>true</canselectrows>
+            <autosuggestcolumn>0</autosuggestcolumn>
+            <autosuggestcolumnselect>0</autosuggestcolumnselect>
             <searchfield>false</searchfield>
             <readonly>false</readonly>
             <editable>true</editable>
             <relateonchange>false</relateonchange>
+            <refreshcalculatedonchange>false</refreshcalculatedonchange>
             <defaultsearchfieldorder>false</defaultsearchfieldorder>
             <userselectablesearchfield>false</userselectablesearchfield>
             <columnnumber>2</columnnumber>

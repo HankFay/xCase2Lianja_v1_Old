@@ -37,3 +37,17 @@ proc Main_config_txtcxcasemodeldir_gotfocus()
 		endif
 	endif
 endproc
+
+
+////////////////////////////////////////////////////////////////
+// Event delegate for 'beforecreate' event
+proc Main_config_beforecreate()
+	// insert your code here
+endproc
+
+
+////////////////////////////////////////////////////////////////
+// Event delegate for 'datachanged' event
+proc Main_config_datachanged()
+	// insert your code here
+endproc
